@@ -1,8 +1,21 @@
-# Go Command 
-src: https://pkg.go.dev/cmd/go#hdr-Environment_variables
+# Go Command [¶](https://pkg.go.dev/cmd/go)
 
-## Environment variables
 
+## Compile packages and dependencies [¶](https://pkg.go.dev/cmd/go#hdr-Compile_packages_and_dependencies)
+```shell
+go build [-o output] [buld flags] [packages]
+```
+- -oフラグで出力先を指定できる
+- Buildはimportで指定したパッケージとその依存関係をコンパイルする。
+- installはされない
+- build対象が複数or単一の非Mainパッケージの場合は結果を破棄する。buildできるかのチェックができる。
+- _test.goは無視される
+- buildコマンド用のフラグはclean, get, install, list, run, testで共有される
+
+簡単な動作チェックように使えそう。docker環境であれば、同ディレクトリに実行ファイルが生成される（要確認）ので扱いやすそう。
+
+
+## Environment variables [¶](https://pkg.go.dev/cmd/go#hdr-Environment_variables)
 
 | variables | description |
 |---|---|
